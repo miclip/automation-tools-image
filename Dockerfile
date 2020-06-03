@@ -1,5 +1,4 @@
 FROM ubuntu
-
 ENV PIVNET_CLI_VERSION 1.0.3
 ENV OM_CLI_VERSION 5.0.0
 RUN apt-get update -y && \
@@ -14,5 +13,5 @@ apt-get update && \
 apt-get install azure-cli && \
 curl -L -O https://github.com/pivotal-cf/om/releases/download/${OM_CLI_VERSION}/om-linux-${OM_CLI_VERSION} && \
   mv om-linux-${OM_CLI_VERSION} /usr/local/bin/om && \
-  chmod +x /usr/local/bin/om
-
+  chmod +x /usr/local/bin/om && \
+apt-get clean
